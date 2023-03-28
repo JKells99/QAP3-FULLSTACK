@@ -1,0 +1,16 @@
+<%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="games-content">
+            <b> Games:</b> <br>
+
+            <% if (theGames.length > 0) { %>
+                <% theGames.forEach(game => { %>
+                    <b><%= game.game_name %> <%= game.game_releasedate %> <%= game.game_coverart %></b> <br>
+                    
+                    <% }) %>
+            <% } %>
+        </div>
+    </body>
+    <%- include('./partials/foot.ejs') %>
+</html>
