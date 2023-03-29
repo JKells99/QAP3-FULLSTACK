@@ -56,6 +56,26 @@ router.delete('/:id', async (req, res) => {
 });
 
 
+router.get('/:id/replace', async (req, res) => {
+    if(DEBUG) console.log('game.Replace : ' + req.params.id);
+    res.render('gamePut.ejs', {gameName: req.query.gameName, gameGenre: req.query.gameGenre, theId: req.params.id});
+});
+
+router.put('/:id', async (req, res) => {
+    if(DEBUG) console.log('games.PUT: ' + req.params.id);
+    try {
+        await gamesDal.putGame(req.params.id, req.body.gameName, req.body.gameGenre);
+        res.redirect('/videogames/');
+    } catch {
+        console.log("NOT COOL")
+        // log this error to an error log file.
+        res.render('503');
+    }
+});
+
+
+
+
 
 
 
