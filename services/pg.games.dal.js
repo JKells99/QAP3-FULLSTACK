@@ -51,8 +51,23 @@ var getGames = function() {
     });
   };
 
+  var deleteGame = function(id) {
+    if(DEBUG) console.log("game.pg.dal.deleteGame()");
+    return new Promise(function(resolve, reject) {
+      const sql = "DELETE FROM videogame1 WHERE game_id = $1;";
+      dal.query(sql, [id], (err, result) => {
+        if (err) {
+            reject(err);
+          } else {
+            resolve(result.rows);
+          }
+      }); 
+    });
+  };
+
   module.exports = {
     getGames,
     addGame,
-    getGameByGameId
+    getGameByGameId,
+    deleteGame
 }

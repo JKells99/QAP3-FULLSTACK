@@ -39,6 +39,22 @@ router.post('/', async (req, res) => {
     } 
 });
 
+router.get('/:id/delete', async (req, res) => {
+    if(DEBUG) console.log('actor.Delete() : ' + req.params.id);
+    res.render('gamedelete.ejs', {gamename: req.query.gameName, gamegenre: req.query.gameGenre, theId: req.params.id});
+});
+
+router.delete('/:id', async (req, res) => {
+    if(DEBUG) console.log('games.DELETE(): ' + req.params.id);
+    try {
+        await gamesDal.deleteGame(req.params.id);
+        res.redirect('/videogames/');
+    } catch {
+        // log this error to an error log file.
+        res.render('503');
+    }
+});
+
 
 
 
