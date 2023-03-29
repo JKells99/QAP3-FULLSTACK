@@ -2,14 +2,43 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="games-content">
-            <b> Games:</b> <br>
 
+            <form action="/videogames" method="POST">
+            <b> Games:</b> <br>
             <% if (theGames.length > 0) { %>
                 <% theGames.forEach(game => { %>
-                    <b><%= game.game_name %> <%= game.game_releasedate %> <%= game.game_coverart %></b> <br>
+                    
+                    
+                    <h3><%= game.game_name %> <%= game.game_genre%></b></h3>
+                   
+
+                    
+                    <a href="/videogames/<%=game._id%>/edit?gameName=<%=game.game_name%>&gameGenre=<%=game.game_genre%>">EDIT</a>
+
+                    <a href="/videogames/<%=game._id%>/delete?gameName=<%=game.game_name%>&gameGenre=<%=game.game_genre%>">DELETE</a>
+
+                    <a href="/videogames/<%=game._id%>/replace?gameName=<%=game.game_name%>&gameGenre=<%=game.game_genre%>&coverArt=">REPLACE</a>
+                    <br>
+
+                   
                     
                     <% }) %>
             <% } %>
+        </br><b></b><label>Add A New Game:</label><b></b></br>
+
+        <label>Game Name:
+            <input type="text" id="gameName" name="gameName" value="<%= locals.gameName %>" required>
+        </label>
+
+        <label>Game Genre:
+            <input type="text" id="gameGenre" name="gameGenre" value="<%= locals.gameGenre %>" required>
+        </label>
+        </br>
+
+        <button>POST</button >
+       
+    </form>
+
         </div>
     </body>
     <%- include('./partials/foot.ejs') %>
