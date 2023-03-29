@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3000;
 
 //SETTING UP LOGGER
-const logEvents = require("../logevents");
+const logEvents = require("./logevents");
 const EventEmitter = require("events");
 class MyEmitter extends EventEmitter {}
 
@@ -32,6 +32,10 @@ app.get('/about', (request, response) => {
 
 const gamesRouter = require('./routes/videogames')
 app.use('/videogames', gamesRouter);
+
+
+const apiRouter = require('./routes/api')
+app.use('/api', apiRouter)
 
 app.use((req, res) => {
     myEmitter.emit(

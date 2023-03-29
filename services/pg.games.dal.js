@@ -27,6 +27,12 @@ var getGames = function () {
         if (DEBUG) console.log(err);
         reject(err);
       } else {
+        myEmitter.emit(
+          "log",
+          "getGames())",
+          "INFO",
+          "Games List Has Been Accessed  "
+        );
         resolve(result.rows);
       }
     });
@@ -50,6 +56,12 @@ var getGameByGameId = function (id) {
         
         reject(err);
       } else {
+        myEmitter.emit(
+          "log",
+          "getGamesByGameID())",
+          "INFO",
+          "A Specific Game  Has Been Accessed"
+        );
         resolve(result.rows);
       }
     });
@@ -72,6 +84,12 @@ var addGame = function (gamename, genre) {
         );
         reject(err);
       } else {
+        myEmitter.emit(
+          "log",
+          "addGame())",
+          "INFO",
+          "A Game Has Been Added To The List  "
+        );
         resolve(result.rows);
       }
     });
@@ -94,6 +112,12 @@ var deleteGame = function (id) {
 
         reject(err);
       } else {
+        myEmitter.emit(
+          "log",
+          "deleteGame())",
+          "WARN",
+          "a Game Has Been Deleted From The List "
+        );
         resolve(result.rows);
       }
     });
@@ -117,6 +141,12 @@ var putGame = function (id, gameName, gameGenre) {
         reject(err);
         
       } else {
+        myEmitter.emit(
+          "log",
+          "putGame())",
+          "INFO",
+          "Game Info Has Been Updated  "
+        );
         resolve(result.rows);
       }
     });
@@ -140,6 +170,12 @@ var patchGame = function (id, gameName, gameGenre) {
         reject(err);
         
       } else {
+        myEmitter.emit(
+          "log",
+          "patchGame())",
+          "Info",
+          "Game Info Has Been Updated  "
+        );
         resolve(result.rows);
       }
     });
