@@ -1,10 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: aqua;
+    font-family: 'Poppins', sans-serif;
+    
+    text-align: center;
 }
 
 .gamescontent{
-    background-color: aqua;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 50%, rgba(148,187,233,1) 71%);
+    padding: 30px;
+}
+.gameForm{
+    padding: 10px;
+}
+.gameForm h2{
+    font-size: 42px;
+
+}
+.gameForm h3{
+    font-size: 32px;
+
+}
+
+.gameForm a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.gameForm a:hover{
+    text-decoration: underline;
+    background-color: lightgrey;
+}
+
+.gametext{
+    padding-top: 20px;
+}
+
+nav{
+    height: 80px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 50%, rgba(148,187,233,1) 71%);
+
+}
+
+nav h1{
+    font-size: 32px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    
+}
+
+nav a:hover{
+    text-decoration: underline;
+    background-color: lightgrey;
+}
+
+
+
+#gameName, #gameGenre{
+    border-radius: 100px;
+    padding: 10px;
+
+}
+
+.inputLable{
+    font-size: 24px;
+}
+
+.headingForAddingGame{
+    font-size: 24px;
+    
+}
+
+.Button{
+    padding: 10px;
+    background-color: #de99b7;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.Button:hover{
+    
+    background-color: #525050;
+    color: white;
+    cursor:pointer;
+   
+}
+
+.createcontent{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 50%, rgba(148,187,233,1) 71%);
+    
+    padding: 30vh;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.createcontent2{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 50%, rgba(148,187,233,1) 71%);
+    padding: 30vh;
+    justify-content: center;
+    height: 100vh;
+    color: rgb(0, 0, 0);
+    font-size: 36px;
+
+}
+
+span{
+    font-size: larger;
+}
+
+footer{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 50%, rgba(148,187,233,1) 71%);
+    height: 10vh;
+    font-size: 30px;
+    font-weight: 900;
 }

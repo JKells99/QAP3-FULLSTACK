@@ -2,12 +2,12 @@
     <%- include('./partials/head.ejs') %>
     <body>
         <%- include('./partials/nav.ejs') %>
-        <div class="create content">
+        <div class="createcontent">
             <form action="/videogames/<%= locals.theId %>?_method=DELETE" method="POST">
-                <label>Are you sure you want to delete this Game</br>
-                    <input type="text" id="<%= locals.theId %>" name="gameName" value="<%= locals.gamename %>" readonly>
+                <label class="headingForAddingGame">Are you sure you want to delete this Game</br>
+                    <input  id="gameName" type="text" id="<%= locals.theId %>" name="gameName" value="<%= locals.gamename %>" readonly>
                 </label>
-                <button>DELETE</button>
+                <button class="button">DELETE</button>
             </form>
         </div>
     </body>

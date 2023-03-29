@@ -3,13 +3,15 @@
         <%- include('./partials/nav.ejs') %>
         <div class="gamescontent">
 
-            <form action="/videogames" method="POST">
-            <b> Games:</b> <br>
+            <form action="/videogames" method="POST" class="gameForm"> 
+
+            
+            <b><h2>Games</h2></b> <br>
             <% if (theGames.length > 0) { %>
                 <% theGames.forEach(game => { %>
                     
                     
-                    <h3><%= game.game_name %> 	&nbsp; <%= game.game_genre%></b></h3>
+                    <h3 class="gametext"><%= game.game_name %> 	&nbsp; <%= game.game_genre%></b></h3>
                    
 
                     
@@ -24,21 +26,21 @@
                     
                     <% }) %>
             <% } %>
-        </br><b></b><label>Add A New Game:</label><b></b></br>
+        </br><b></b><label class="headingForAddingGame">Add A New Game:</label><b></b></br>
 
-        <label>Game Name:
+        <label class="inputLable">Game Name:
             <input type="text" id="gameName" name="gameName" value="<%= locals.gameName %>" required>
         </label>
 
-        <label>Game Genre:
+        <label class="inputLable">Game Genre:
             <input type="text" id="gameGenre" name="gameGenre" value="<%= locals.gameGenre %>" required>
         </label>
         </br>
 
-        <button>POST</button >
+        <button class="Button">POST</button >
        
-    </form>
-
+    
+            </form>
         </div>
     </body>
     <%- include('./partials/foot.ejs') %>
