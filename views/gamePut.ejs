@@ -2,13 +2,13 @@
     <%- include('./partials/head.ejs') %>
     <body>
         <%- include('./partials/nav.ejs') %>
-        <div class="create content">
+        <div class="createcontent">
             <form action="/videogames/<%= locals.theId %>?_method=PUT" method="POST">
-                <label>Replace Game Details:</br>
-                    <input type="text" name="gameName" value="<%= locals.gameName %>" required>
-                    <input type="text" name="gameGenre" value="<%= locals.gameGenre %>" required>
+                <label class="inputLable">Replace Game Details:</br>
+                    <input type="text" id="gameName" name="gameName" value="<%= locals.gameName %>" required>
+                    <input type="text" id="gameGenre" name="gameGenre" value="<%= locals.gameGenre %>" required>
                 </label></br>
-                <button>PUT</button>
+                <button class="Button">PUT</button>
             </form>
         </div>
     </body>
