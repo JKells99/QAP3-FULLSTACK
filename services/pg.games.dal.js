@@ -3,7 +3,9 @@ const dal = require("./auth_db");
 var getGames = function() {
     if(DEBUG) console.log("games.pg.dal.getGames()");
     return new Promise(function(resolve, reject) {
+
       const sql = "SELECT game_id AS _id, game_name,game_genre FROM videogame1"
+
       dal.query(sql, [], (err, result) => {
         if (err) {
           // logging should go here
@@ -15,6 +17,7 @@ var getGames = function() {
       }); 
     }); 
   };
+
 
   var getGameByGameId = function(id) {
     if(DEBUG) console.log("games.pg.dal.getGameByGameId()");
@@ -52,4 +55,4 @@ var getGames = function() {
     getGames,
     addGame,
     getGameByGameId
-  }
+}

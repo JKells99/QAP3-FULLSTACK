@@ -2,6 +2,7 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="games-content">
+
             <form action="/videogames" method="POST">
             <b> Games:</b> <br>
             <% if (theGames.length > 0) { %>
@@ -37,6 +38,7 @@
         <button>POST</button >
        
     </form>
+
         </div>
     </body>
     <%- include('./partials/foot.ejs') %>

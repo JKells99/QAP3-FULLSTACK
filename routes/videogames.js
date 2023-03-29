@@ -14,6 +14,7 @@ router.get('/', async (req, res) =>{
     }
 })
 
+
 router.get('/:id', async (req, res) => {
     try {
         let aGame = await gamesDal.getGameByGameId(req.params.id);
@@ -37,6 +38,8 @@ router.post('/', async (req, res) => {
         res.render('503');
     } 
 });
+
+
 
 
 
