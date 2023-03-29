@@ -3,6 +3,17 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = 3000;
 
+//SETTING UP LOGGER
+const logEvents = require("../logevents");
+const EventEmitter = require("events");
+class MyEmitter extends EventEmitter {}
+
+// initialize an new emitter object
+const myEmitter = new MyEmitter();
+// add the listener for the logEvent
+myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg));
+
+
 global.DEBUG = true;
 
 app.set('view engine', 'ejs');
@@ -23,6 +34,12 @@ const gamesRouter = require('./routes/videogames')
 app.use('/videogames', gamesRouter);
 
 app.use((req, res) => {
+    myEmitter.emit(
+        "log",
+        "404",
+        "ERROR",
+        "Content Is Not Found"
+      );
     res.status(404).render('404');
 });
 
