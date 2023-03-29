@@ -53,7 +53,7 @@ router.get('/:id', async (req, res) => {
             "log",
             "api/videogames/:id",
             "ERROR",
-            "SERVER ERROR"
+            "API GET FAILED USING ID PARARM"
           );
         res.statusCode = 503;
         res.json({message: "Service Unavailable", status: 503});
@@ -75,7 +75,7 @@ router.get('/:id', async (req, res) => {
             "log",
             "api/videogames/ POST",
             "ERROR",
-            "SERVER ERROR 503"
+            "API POST FAILED"
           );
         res.statusCode = 503;
         res.json({message: "Service Unavailable", status: 503});
@@ -93,7 +93,7 @@ router.get('/:id', async (req, res) => {
             "log",
             "api/videogames/ PATCH",
             "ERROR",
-            "SERVER ERROR 503"
+            "API PATCH FAILED"
           );
         res.statusCode = 503;
         res.json({message: "Service Unavailable", status: 503});
@@ -111,7 +111,7 @@ router.get('/:id', async (req, res) => {
             "log",
             "api/videogames/ PUT",
             "ERROR",
-            "SERVER ERROR 503"
+            "API Put FAILED "
           );
         res.statusCode = 503;
         res.json({message: "Service Unavailable", status: 503});
